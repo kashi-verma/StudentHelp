@@ -12,18 +12,18 @@ const AuthButtons = () => {
   };
 
   return (
-    <div className="flex flex-col sm:flex-row gap-4 w-full max-w-sm mx-auto">
+    <div className="flex flex-row gap-4 w-full max-w-sm mx-auto">
       <Button 
         onClick={handleSignIn}
         variant="primary"
-        className="flex-1"
+        className="flex-1 px-4 py-2 text-sm"
       >
         Sign In
       </Button>
       <Button 
         onClick={handleSignUp}
         variant="primary"
-        className="flex-1"
+        className="flex-1 px-4 py-2 text-sm"
       >
         Sign Up
       </Button>
