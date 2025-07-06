@@ -19,14 +19,14 @@ const AuthButtons = () => {
       <Button 
         onClick={handleSignIn}
         variant="primary"
-        className="flex-1 px-4 py-2 text-sm"
+        className="flex-1 px-6 py-3 text-sm font-semibold"
       >
         Sign In
       </Button>
       <Button 
         onClick={handleSignUp}
         variant="primary"
-        className="flex-1 px-4 py-2 text-sm"
+        className="flex-1 px-6 py-3 text-sm font-semibold"
       >
         Sign Up
       </Button>
