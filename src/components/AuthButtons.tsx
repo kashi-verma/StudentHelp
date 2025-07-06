@@ -1,14 +1,17 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 
 const AuthButtons = () => {
+  const navigate = useNavigate();
+
   const handleSignIn = () => {
-    console.log('Sign In clicked');
+    navigate('/signin');
   };
 
   const handleSignUp = () => {
-    console.log('Sign Up clicked');
+    navigate('/signup');
   };
 
   return (
