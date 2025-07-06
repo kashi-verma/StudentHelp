@@ -20,8 +20,9 @@ const SignUp = () => {
       <div className="w-full max-w-md">
         <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-100">
           <div className="text-center mb-8">
-            <h1 className="text-2xl font-bold text-gray-800 mb-2">Join</h1>
-            <h2 className="text-xl font-semibold text-[#4F46E5] mb-4">StudentHelp</h2>
+            <h1 className="text-2xl font-bold text-gray-800 mb-4">
+              Join <span className="text-[#4F46E5]">StudentHelp</span>
+            </h1>
             <p className="text-gray-600 text-sm">
               Create your account to start<br />
               Your Buy & Sell journey
