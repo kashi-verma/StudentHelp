@@ -5,6 +5,7 @@ import { Search, Menu, ChevronLeft, ChevronRight, Star, Users, Shield, Zap } fro
 const Home = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const slides = [
     {
@@ -65,6 +66,14 @@ const Home = () => {
     { name: "Rate Us", href: "#rate" }
   ];
 
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      console.log('Searching for:', searchQuery);
+      // Add your search logic here
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -79,12 +88,24 @@ const Home = () => {
               <h1 className="text-xl font-bold text-foreground">StudentHelp</h1>
             </div>
 
-            {/* Right: Search and Menu */}
-            <div className="flex items-center space-x-4">
-              <button className="p-2 hover:bg-accent rounded-lg transition-colors">
-                <Search className="w-5 h-5 text-muted-foreground" />
-              </button>
-              
+            {/* Center: Search Bar */}
+            <div className="flex-1 max-w-2xl mx-8">
+              <form onSubmit={handleSearch} className="relative">
+                <div className="relative">
+                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                  <input
+                    type="text"
+                    placeholder="Search products, books, electronics..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    className="w-full pl-10 pr-4 py-2 border border-input rounded-lg bg-background text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:border-transparent"
+                  />
+                </div>
+              </form>
+            </div>
+
+            {/* Right: Menu */}
+            <div className="flex items-center">
               <div className="relative">
                 <button
                   onClick={() => setIsMenuOpen(!isMenuOpen)}
